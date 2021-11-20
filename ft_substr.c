@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 22:17:20 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/17 01:21:44 by atouati          ###   ########.fr       */
+/*   Created: 2021/11/19 15:44:16 by atouati           #+#    #+#             */
+/*   Updated: 2021/11/19 21:55:40 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned int	j;
+	unsigned int	i;
+	char			*sub_str;
 
-	j = (unsigned char)c;
-	str = ((unsigned char *)s);
-	i = 0;
-	while (i < n)
+	if (!s)
 	{
-		if (str[i] == j)
-		{
-			return (str + i);
-		}
-		i++;
+		return (NULL);
 	}
-	return (0);
+	i = 0;
+	sub_str = malloc((len + 1) * sizeof(char));
+	if (!sub_str)
+		return (NULL);
+	while (len-- && start < ft_strlen(s))
+	{
+		sub_str[i] = s[start];
+		i++;
+		start++;
+	}
+	sub_str[i] = '\0';
+	return (sub_str);
 }
+//
+//int main()
+//{
+//printf("%s", ft_substr("Ayoub touati", 6, 6));
+//}

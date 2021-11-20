@@ -6,7 +6,7 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:17:00 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/14 17:32:37 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/17 00:40:36 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	str = (char *)s;
 	i = ft_strlen(s);
-	while (i > 0 && str[i] != c)
+	while (i > 0 && str[i] != (char)c)
 	{
 		i--;
 	}
-	if (str[i] == c)
+	if (str[i] == (char)c)
 	{
 		return (str + i);
 	}
