@@ -6,7 +6,7 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:56:00 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/17 22:32:24 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/21 21:17:04 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return (&str[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (char)c)
 		return (&str[i]);
 	return (NULL);
 }

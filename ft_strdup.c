@@ -6,7 +6,7 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:58:53 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/17 21:45:57 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/21 21:21:10 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 
 	i = 0;
-	str = malloc(ft_strlen(s1) + 1);
+	str = (char *)malloc(ft_strlen(s1) + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (s1[i])
 	{
 		str[i] = s1[i];

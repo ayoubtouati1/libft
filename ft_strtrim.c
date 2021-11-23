@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 15:44:16 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/21 22:05:28 by atouati          ###   ########.fr       */
+/*   Created: 2021/11/21 22:07:27 by atouati           #+#    #+#             */
+/*   Updated: 2021/11/21 23:31:31 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	i;
-	char			*sub_str;
+	size_t	i;
+	size_t	len_s1;
+	char	*str;
 
-	if (!s)
+	if (!s1)
 		return (NULL);
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
 	i = 0;
-	sub_str = (char *)malloc((len + 1) * sizeof(char));
-	if (!sub_str)
-		return (NULL);
-	while (len--)
-	{
-		sub_str[i] = s[start];
+	len_s1 = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-		start++;
+	while (s1[len_s1 - 1] && ft_strchr(set, s1[len_s1 - 1]) && len_s1 > i)
+	{
+		len_s1--;
 	}
-	sub_str[i] = '\0';
-	return (sub_str);
+	str = (char *)malloc((len_s1 - i + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	if (str)
+		ft_strlcpy(str, &s1[i], len_s1 - i + 1);
+	return (str);
 }
-//
-//int main()
-//{
-//printf("%s", ft_substr("Ayoub touati", 6, 6));
-//}

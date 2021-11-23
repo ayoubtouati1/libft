@@ -6,7 +6,7 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 02:28:16 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/19 00:21:08 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/21 21:24:56 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[len_dst] = '\0';
 	return (res);
 }
-/*
-int main()
-{
-	printf("%zu", ft_strlcat("Ayoub", "touati", 1));
-}*/

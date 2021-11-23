@@ -6,7 +6,7 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:56:40 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/19 22:17:26 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/23 17:30:38 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ char	*ft_strdup(const char *s1);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 
 #endif

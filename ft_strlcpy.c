@@ -6,21 +6,21 @@
 /*   By: atouati <atouati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 00:03:38 by atouati           #+#    #+#             */
-/*   Updated: 2021/11/17 19:41:36 by atouati          ###   ########.fr       */
+/*   Updated: 2021/11/21 23:27:14 by atouati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
 size_t
-	ft_strlcpy(char *dst, const char *src, size_t size)
+	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	if (size > 0)
+	if (dstsize > 0)
 	{
-		while (src[i] && i < (size - 1))
+		while (src[i] && i < (dstsize - 1))
 		{
 			dst[i] = src[i];
 			i++;
@@ -31,10 +31,3 @@ size_t
 		i++;
 	return (i);
 }
-/*
-int main()
-{
-	char s1[6] = "Ayoub";
-	char s2[] = "touati";
-	printf("%zu", ft_strlcpy(s1, s2, -1));
-}*/
